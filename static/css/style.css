@@ -30,6 +30,7 @@
     width: 240px;
     border-radius: 5px;
     margin: 50px;
+    box-shadow: 10px 10px 5px lightblue;
 }
 .registration img{
     height: 200px;
@@ -38,11 +39,20 @@
     border-radius: 5px;
 }
 .registration h3{
-    text-align: center;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 .registration a{
+    text-align: center;
     text-decoration: none;
+}
+.registration h3:hover{
+    background-color: white;
+    color: black;
 }
 @media screen and (max-width: 500px) {
   .header a {

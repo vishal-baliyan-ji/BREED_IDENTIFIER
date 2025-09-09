@@ -29,7 +29,7 @@
     height: 300px;
     width: 240px;
     border-radius: 5px;
-    margin: 50px;
+    margin: 70px;
     box-shadow: 10px 10px 5px lightblue;
 }
 .registration img{
@@ -43,8 +43,8 @@
     margin-left: 20px;
     margin-right: 20px;
     color: white;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 20px;
 }
 .registration a{
     text-align: center;
@@ -72,6 +72,7 @@
     background-color: rgb(18, 76, 96);
     height: 300px;
     width: 240px;
+    margin: 25px;
     border-radius: 5px;
     left: 50%;
    }

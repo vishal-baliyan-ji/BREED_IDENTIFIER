@@ -76,6 +76,51 @@ html, body {
     background-color: white;
     color: black;
 }
+
+.logindiv{
+    display: grid;
+    place-content: center;
+}
+.formdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 20px;
+    height: 400px;
+    width: 400px;
+    background-color:  #f1f1f1;
+    box-shadow: 10px 10px 5px lightblue;
+    border-radius: 20px;
+}
+.formdiv input{
+    
+    height: 40px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+.formdiv form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formdiv button{
+    height: 40px;
+    width: 150px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: deepskyblue;
+}
+.formdiv img{
+    width: 80px;
+    height: auto;
+}
+.formdiv input:focus{
+    outline: none;
+}
+
 @media screen and (max-width: 500px) {
     .header{
         flex-direction: column;    
@@ -118,4 +163,16 @@ html, body {
    .logo{
     display: flex;
    }
+   .formdiv{
+    height: 400px;
+    width: 300px;
+    }
+    .formdiv input{
+    
+    height: 40px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    }
 }

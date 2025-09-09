@@ -1,19 +1,22 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-.header{
-    overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 20px 10px;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;            
+html,
+body {
+    margin: 0;
+    padding: 0;
     
 }
 
-.header a{
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header a {
     float: left;
     color: black;
     text-align: center;
@@ -23,43 +26,51 @@ html, body {
     line-height: 25px;
     border-radius: 4px;
 }
+
 .header a:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: #ddd;
+    color: black;
 }
-.logo{
+
+.logo {
     display: inline-block;
 }
-.logo img{
+
+.logo img {
     height: 98%;
     width: 98%;
 }
-.navigation{
+
+.navigation {
     float: right;
 }
-.animalPannel{
+
+.animalPannel {
     display: flex;
     justify-content: space-evenly;
-    gap: 40px; 
-    align-items: center;            
+    gap: 40px;
+    align-items: center;
     width: 100%;
     margin-top: 20px;
-    
+
 }
-.registration{
+
+.registration {
     background-color: rgb(18, 76, 96);
     height: 250px;
     width: 200px;
     border-radius: 20px;
     box-shadow: 10px 10px 5px lightblue;
 }
-.registration img{
+
+.registration img {
     height: 150px;
     width: 160px;
     margin: 20px;
     border-radius: 5px;
 }
-.registration h3{
+
+.registration h3 {
     margin-top: 5px;
     margin-left: 20px;
     margin-right: 20px;
@@ -68,111 +79,129 @@ html, body {
     border-radius: 20px;
     transition: all 1s ease;
 }
-.registration a{
+
+.registration a {
     text-align: center;
     text-decoration: none;
 }
-.registration h3:hover{
+
+.registration h3:hover {
     background-color: white;
     color: black;
 }
 
-.logindiv{
+.logindiv {
     display: grid;
     place-content: center;
 }
-.formdiv{
+
+.formdiv {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     margin-top: 20px;
     height: 400px;
     width: 400px;
-    background-color:  #f1f1f1;
+    background-color: #f1f1f1;
     box-shadow: 10px 10px 5px lightblue;
     border-radius: 20px;
 }
-.formdiv input{
-    
+
+.formdiv input {
+
     height: 40px;
     width: 350px;
     margin: 20px;
     border-radius: 20px;
     font-size: 18px;
 }
-.formdiv form{
+
+.formdiv form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.formdiv button{
+
+.formdiv button {
     height: 40px;
     width: 150px;
     margin: 20px;
+    font-size: 18px;
     border-radius: 20px;
-    background-color: deepskyblue;
+    background-color: black;
+    color: white;
 }
-.formdiv img{
+
+.formdiv img {
     width: 80px;
     height: auto;
 }
-.formdiv input:focus{
+
+.formdiv input:focus {
     outline: none;
 }
 
 @media screen and (max-width: 500px) {
-    .header{
-        flex-direction: column;    
+    .header {
+        flex-direction: column;
         align-items: flex-start;
     }
-   .header a {
-    float: none;
-    display: inline-block;
-    text-align: left;
-    
-  }
-  .navigation {
-     flex-direction: column;    
-     width: 100%;
-  }
-  .navigation a{
-    margin-left: 20px;
-    
-  }
-  .animalPannel{
-    width: 100%;
-    display: grid;
-    place-content: center;
-   }
-   .registration{
-    background-color: rgb(18, 76, 96);
-    height: 280px;
-    width: 220px;
-    border-radius: 20px;
-    box-shadow: 10px 10px 5px lightblue;
-   }
 
-   
-   .registration img{
-    height: 180px;
-    width: 180px;
-    margin: 20px;
-    border-radius: 10px;
+    .header a {
+        float: none;
+        display: inline-block;
+        text-align: left;
+
     }
-   .logo{
-    display: flex;
-   }
-   .formdiv{
-    height: 400px;
-    width: 300px;
+
+    .navigation {
+        flex-direction: column;
+        width: 100%;
     }
-    .formdiv input{
-    
-    height: 40px;
-    width: 250px;
-    margin: 10px;
-    border-radius: 20px;
-    font-size: 18px;
+
+    .navigation a {
+        margin-left: 20px;
+
+    }
+
+    .animalPannel {
+        width: 100%;
+        display: grid;
+        place-content: center;
+    }
+
+    .registration {
+        background-color: rgb(18, 76, 96);
+        height: 280px;
+        width: 220px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 5px lightblue;
+    }
+
+
+    .registration img {
+        height: 180px;
+        width: 180px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .formdiv {
+        height: 400px;
+        width: 300px;
+    }
+
+    .formdiv input {
+
+        height: 40px;
+        width: 250px;
+        margin: 10px;
+        border-radius: 20px;
+        font-size: 18px;
     }
 }

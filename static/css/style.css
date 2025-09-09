@@ -1,8 +1,18 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
 .header{
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 20px 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    
 }
+
 .header a{
     float: left;
     color: black;
@@ -17,24 +27,35 @@
   background-color: #ddd;
   color: black;
 }
+.logo{
+    display: inline-block;
+}
+.logo img{
+    height: 98%;
+    width: 98%;
+}
 .navigation{
     float: right;
 }
 .animalPannel{
-    width: 100%;
     display: flex;
+    justify-content: space-evenly;
+    gap: 40px; 
+    align-items: center;            
+    width: 100%;
+    margin-top: 20px;
+    
 }
 .registration{
     background-color: rgb(18, 76, 96);
-    height: 300px;
-    width: 240px;
-    border-radius: 5px;
-    margin: 70px;
+    height: 250px;
+    width: 200px;
+    border-radius: 20px;
     box-shadow: 10px 10px 5px lightblue;
 }
 .registration img{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 160px;
     margin: 20px;
     border-radius: 5px;
 }
@@ -45,6 +66,7 @@
     color: white;
     padding: 10px;
     border-radius: 20px;
+    transition: all 1s ease;
 }
 .registration a{
     text-align: center;
@@ -55,13 +77,23 @@
     color: black;
 }
 @media screen and (max-width: 500px) {
-  .header a {
+    .header{
+        flex-direction: column;    
+        align-items: flex-start;
+    }
+   .header a {
     float: none;
-    display: block;
+    display: inline-block;
     text-align: left;
+    
   }
   .navigation {
-    float: none;
+     flex-direction: column;    
+     width: 100%;
+  }
+  .navigation a{
+    margin-left: 20px;
+    
   }
   .animalPannel{
     width: 100%;
@@ -70,10 +102,20 @@
    }
    .registration{
     background-color: rgb(18, 76, 96);
-    height: 300px;
-    width: 240px;
-    margin: 25px;
-    border-radius: 5px;
-    left: 50%;
+    height: 280px;
+    width: 220px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px lightblue;
+   }
+
+   
+   .registration img{
+    height: 180px;
+    width: 180px;
+    margin: 20px;
+    border-radius: 10px;
+    }
+   .logo{
+    display: flex;
    }
 }

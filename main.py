@@ -31,9 +31,9 @@ def identify():
     return render_template('identify.html')
 
 
-@app.route("/vaccination")
-def vaccination():
-    return render_template('vaccination.html')
+@app.route("/search")
+def search():
+    return render_template('search.html')
 
 if __name__ == '__main__':
    app.run(debug=True)

@@ -213,6 +213,34 @@ body {
 .searchdiv input:focus{
     outline: none;
 }
+.identifydiv{
+    display: flex;
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+}
+.identifydiv input[type="file"] {
+      font-size: 16px;
+      color: black; 
+      padding: 8px;
+}
+.identifydiv input[type="file"]::file-selector-button{
+    background-color: blue;
+    height: 40px;
+    width: 150px;
+    border-radius: 30px;
+    color: white;
+
+}
+.identifydiv button{
+    height: 40px;
+    width: 150px;
+    border-radius: 30px;
+    color: white;
+    background-color: blue;
+}
 
 @media screen and (max-width: 500px) {
     .header {
@@ -287,4 +315,5 @@ body {
         color: white;
         background-color: black;
     }
+    
 }

@@ -17,7 +17,11 @@
         <div class="navigation">
             <a href="/">Home</a>
             <a href="/contact">Contact us</a>
-            <a href="/login">Login</a>
+            {% if status=="Login" %}
+                <a href="/login">{{ status }}</a>
+            {% else %}
+                <a href="/logout">{{ status }}</a>
+            {% endif %}
         </div>
     </div>
 

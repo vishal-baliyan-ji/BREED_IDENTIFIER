@@ -1,6 +1,9 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+{% if message %}
+    <script>alert(message)</script>
+{% endif %}
 <div class="animalPannel">
     <div class="registration">
         <img src="/static/img/cow.jpg" alt="cow">

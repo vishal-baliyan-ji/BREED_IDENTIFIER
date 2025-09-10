@@ -31,6 +31,11 @@ def identify():
     return render_template('identify.html')
 
 
+@app.route("/identifyanimal",methods=['POST'])
+def identifyanimal():
+    return redirect(url_for('identify'))
+
+
 @app.route("/search")
 def search():
     return render_template('search.html')

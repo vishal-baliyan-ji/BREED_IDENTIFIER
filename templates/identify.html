@@ -1,4 +1,8 @@
 {%extends 'layout.html' %}
 {% block content%}
     <h1 style="color: darkgrey; text-align: center;">This feature is comming soon</h1>
+    <form action="/identifyanimal" enctype="multipart/form-data" method="post" >
+        <input type="file" name="file" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
 {%endblock%}

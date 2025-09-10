@@ -190,8 +190,29 @@ body {
     margin-top: 20px;
     text-align: center;
 }
-
-
+.searchdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.searchdiv input{
+    height: 40px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+.searchdiv button{
+    height: 40px;
+    width: 150px;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+}
+.searchdiv input:focus{
+    outline: none;
+}
 
 @media screen and (max-width: 500px) {
     .header {
@@ -254,5 +275,16 @@ body {
         margin: 10px;
         border-radius: 20px;
         font-size: 18px;
+    }
+    .searchdiv input{
+        height: 40px;
+        width: 200px;
+    }
+    .searchdiv button{
+        height: 40px;
+        width: 90px;
+        border-radius: 30px;
+        color: white;
+        background-color: black;
     }
 }

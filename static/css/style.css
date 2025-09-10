@@ -141,6 +141,57 @@ body {
 .formdiv input:focus {
     outline: none;
 }
+.fullregister{
+    margin-top: 50px;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.smallregister{
+    width: 400px ;
+    height: 600px;
+    border-radius: 30px;
+    background-color: #f1f1f1;
+    box-shadow: 10px 10px 5px lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.smallregister label{
+    display: block;
+    color: black;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.smallregister input ,select{
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.smallregister input,select:focus{
+    outline: none;
+}
+.buttoncontainer{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.smallregister button {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
 
 @media screen and (max-width: 500px) {
     .header {

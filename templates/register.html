@@ -1,0 +1,38 @@
+{%extends 'layout.html' %}
+{% block content%}
+    <div class="fullregister">
+        <div class="smallregister">
+            <form action="/registeranimal" method="post">
+                <label style="text-align: center; font-size: large; font-weight: bold; margin-bottom: 30px;" >Register Animal</label>
+                <label for="eartag">Ear tag number*</label>
+                <input type="number" name="eartag" id="eartag" placeholder="eg. 123456789012" class="biginput">
+                <label for="entrydate">Data entry date*</label>
+                <input type="date" name="entrydate" id="entrydate" class="samllinput">
+                <label for="taggingdate">Tagging date*</label>
+                <input type="date" name="taggingdate" id="taggingdate" class="samllinput">
+                <label for="species">Category/Species*</label>
+                <select name="species" id="species" class="biginput">
+                    <option value="cow">Cow</option>
+                    <option value="buffalo">Buffalo</option>
+                </select>
+
+                <label for="name">Name of Animal*</label >
+                <input type="text" name="name" id="name" placeholder="eg. abc" class="samllinput">
+                <label for="sex">Sex*</label>
+                <select name="sex" id="sex" class="samllinput">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label for="dob">Data of birth*</label>
+                <input type="date" name="dob" id="dob" class="samllinput">
+                <label for="age">Age*</label>
+                <input type="month" name="age" id="age" class="samllinput">
+                <div class="buttoncontainer">
+                    <button type="submit">Submit</button>
+                </div>
+                
+            </form>
+            
+        </div>
+    </div>
+{%endblock%}

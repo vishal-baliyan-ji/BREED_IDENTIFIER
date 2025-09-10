@@ -17,5 +17,23 @@ def submit():
     password = request.form['password']
     return redirect(url_for('home'))
 
+@app.route("/register")
+def register():
+    return render_template('register.html')
+
+@app.route('/registeranimal',methods=['POST'])
+def registeranimal():
+    return redirect(url_for('home'))
+
+
+@app.route("/identify")
+def identify():
+    return render_template('identify.html')
+
+
+@app.route("/vaccination")
+def vaccination():
+    return render_template('vaccination.html')
+
 if __name__ == '__main__':
    app.run(debug=True)

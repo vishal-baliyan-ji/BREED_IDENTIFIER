@@ -21,7 +21,7 @@ def contact():
     return render_template('contact.html')
 @app.route("/login")
 def login():
-    return render_template('login.html')
+    return render_template('login.html',status="Login")
 
 @app.route("/logout")
 def logout():
@@ -43,7 +43,8 @@ def submit():
         session['name']=name
         return redirect(url_for('home'))
     else:
-        return "Wrong password"
+        flash('Invalid username or password.', 'error')
+        return redirect(url_for('login'))
     
 @app.route("/register")
 def register():

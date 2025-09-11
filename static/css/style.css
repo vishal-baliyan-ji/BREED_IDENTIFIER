@@ -122,6 +122,9 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.formdiv label {
+    color: red;
+}
 
 .formdiv button {
     height: 40px;
@@ -168,6 +171,7 @@ body {
     height: 30px;
     width: 300px;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .smallregister input,select:focus{

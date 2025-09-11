@@ -4,9 +4,20 @@
 <div class="logindiv">
     <div class="formdiv">
         <img src="/static/img/user.png" alt="">
+
     <form action="/submit" method="post">
         <input type="text" name="usrid" placeholder="Enter UserID">
-        <input type="password" name="password" placeholder="Enter Password">
+        <input type="password" name="password" placeholder="Enter Password" id="password">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                
+                {% for category, message in messages %}
+                    
+                    <label for="password">{{ message }}</label>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="password"></label>
         <button type="submit">Submit</button>
     </form>
 </div>

@@ -1,6 +1,8 @@
 from flask import Flask,render_template,redirect,url_for,request,session,flash
 import jinja2
-
+import os
+from Identifier import predict
+from werkzeug.utils import secure_filename
 
 import mysql.connector
 mydb =mysql.connector.connect(host="localhost",user="root",passwd="Roomno775",database="pashudhan")
@@ -60,12 +62,39 @@ def registeranimal():
 
 @app.route("/identify")
 def identify():
-    return render_template('identify.html')
+    return render_template('identify.html',breed="")
 
 
 @app.route("/identifyanimal",methods=['POST'])
 def identifyanimal():
-    return redirect(url_for('identify'))
+    if 'image' not in request.files:
+        return "No file part"
+
+    file = request.files['image']
+
+    if file.filename == '':
+        return "No selected file"
+
+    # Save the file temporarily
+    filename = secure_filename(file.filename)
+    temp_path = os.path.join("temp_uploads", filename)
+    
+    # Ensure the temp folder exists
+    os.makedirs("temp_uploads", exist_ok=True)
+    
+    file.save(temp_path)
+
+    # Predict using the saved file
+    predicted_class= predict(img_path=temp_path)
+
+    # Delete the temporary file
+    os.remove(temp_path)
+
+    # Return result
+    
+    
+    return render_template('identify.html',breed=f"Identified breed: {predicted_class}")
+
 
 
 @app.route("/search")

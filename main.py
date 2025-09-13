@@ -57,6 +57,20 @@ def register():
 
 @app.route('/registeranimal',methods=['POST'])
 def registeranimal():
+    dr_id=session['user']
+    entrydate=request.form['entrydate']
+    taggingdate=request.form['taggingdate']
+    species=request.form['species']
+    name=request.form['name']
+    sex=request.form['sex']
+    dob=request.form['dob']
+    tagno=request.form['eartag']
+
+    sql = "INSERT INTO registered_animals (dr_id, entrydate, taggingdate,species,name,sex,dob,tagno) VALUES (%s, %s, %s, %s, %s, %s, %s,%s)"
+    values = (dr_id, entrydate, taggingdate,species,name,sex,dob,tagno)
+
+    cursor.execute(sql, values)
+    mydb.commit()
     return redirect(url_for('home'))
 
 

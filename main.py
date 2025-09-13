@@ -5,7 +5,10 @@ from Identifier import predict
 from werkzeug.utils import secure_filename
 
 import mysql.connector
-mydb =mysql.connector.connect(host="localhost",user="root",passwd="Roomno775",database="pashudhan")
+try:
+    mydb =mysql.connector.connect(host="localhost",user="root",passwd="Roomno775",database="pashudhan")
+except:
+    pass
 
 cursor=mydb.cursor()
 

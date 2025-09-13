@@ -7,10 +7,11 @@ from werkzeug.utils import secure_filename
 import mysql.connector
 try:
     mydb =mysql.connector.connect(host="localhost",user="root",passwd="Roomno775",database="pashudhan")
+    cursor=mydb.cursor()
 except:
     pass
 
-cursor=mydb.cursor()
+
 
 
 app = Flask(__name__)

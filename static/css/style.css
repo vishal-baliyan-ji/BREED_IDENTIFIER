@@ -231,7 +231,7 @@ body {
       padding: 8px;
 }
 .identifydiv input[type="file"]::file-selector-button{
-    background-color: blue;
+    background-color: rgb(18, 125, 255);
     height: 40px;
     width: 150px;
     border-radius: 30px;
@@ -243,7 +243,7 @@ body {
     width: 150px;
     border-radius: 30px;
     color: white;
-    background-color: blue;
+    background-color: rgb(18, 125, 255);
 }
 
 @media screen and (max-width: 500px) {

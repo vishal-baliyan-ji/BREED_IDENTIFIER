@@ -62,7 +62,10 @@ def registeranimal():
 
 @app.route("/identify")
 def identify():
-    return render_template('identify.html',breed="")
+    if 'user' in session:
+        return render_template('identify.html',breed="",status="Logout")
+    else:
+        return render_template('identify.html',breed="",status="Login")
 
 
 @app.route("/identifyanimal",methods=['POST'])
@@ -75,25 +78,19 @@ def identifyanimal():
     if file.filename == '':
         return "No selected file"
 
-    # Save the file temporarily
     filename = secure_filename(file.filename)
     temp_path = os.path.join("temp_uploads", filename)
     
-    # Ensure the temp folder exists
     os.makedirs("temp_uploads", exist_ok=True)
     
     file.save(temp_path)
-
-    # Predict using the saved file
     predicted_class= predict(img_path=temp_path)
 
-    # Delete the temporary file
     os.remove(temp_path)
-
-    # Return result
-    
-    
-    return render_template('identify.html',breed=f"Identified breed: {predicted_class}")
+    if 'user' in session:
+        return render_template('identify.html',breed=f"Identified breed: {predicted_class}",status="Logout")
+    else:
+        return render_template('identify.html',breed=f"Identified breed: {predicted_class}",status="Login")
 
 
 

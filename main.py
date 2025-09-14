@@ -39,18 +39,21 @@ def logout():
 def submit():
     username = request.form['usrid']
     password = request.form['password']
-    sql="select password, name from drs_data where id=%s"
-    cursor.execute(sql,(username,))
-    data=cursor.fetchone()
-    pwd=data[0]
-    name=data[1]
-    if (password==pwd):
-        session['user']=username
-        session['name']=name
-        return redirect(url_for('home'))
-    else:
-        flash('Invalid username or password.', 'error')
-        return redirect(url_for('login'))
+    try:
+        sql="select password, name from drs_data where id=%s"
+        cursor.execute(sql,(username,))
+        data=cursor.fetchone()
+        pwd=data[0]
+        name=data[1]
+        if (password==pwd):
+            session['user']=username
+            session['name']=name
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid username or password.', 'error')
+    except:
+        pass
+    return redirect(url_for('login'))
     
 @app.route("/register")
 def register():
@@ -69,12 +72,15 @@ def registeranimal():
     sex=request.form['sex']
     dob=request.form['dob']
     tagno=request.form['eartag']
+    try:
 
-    sql = "INSERT INTO registered_animals (dr_id, entrydate, taggingdate,species,name,sex,dob,tagno) VALUES (%s, %s, %s, %s, %s, %s, %s,%s)"
-    values = (dr_id, entrydate, taggingdate,species,name,sex,dob,tagno)
+        sql = "INSERT INTO registered_animals (dr_id, entrydate, taggingdate,species,name,sex,dob,tagno) VALUES (%s, %s, %s, %s, %s, %s, %s,%s)"
+        values = (dr_id, entrydate, taggingdate,species,name,sex,dob,tagno)
 
-    cursor.execute(sql, values)
-    mydb.commit()
+        cursor.execute(sql, values)
+        mydb.commit()
+    except:
+        pass
     return redirect(url_for('home'))
 
 

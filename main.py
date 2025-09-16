@@ -3,10 +3,13 @@ import jinja2
 import os
 from Identifier import predict
 from werkzeug.utils import secure_filename
-
 import mysql.connector
+
+DB_HOST = os.getenv("DATABASE_HOST")
+DB_PASS = os.getenv("DATABASE_PASSWORD")
+
 try:
-    mydb =mysql.connector.connect(host="localhost",user="root",passwd="Roomno775",database="pashudhan")
+    mydb =mysql.connector.connect(host=DB_HOST,user="pashudhan_habitlucky",passwd=DB_PASS,database="pashudhan_habitlucky",port="61002")
     cursor=mydb.cursor()
 except:
     pass
@@ -15,7 +18,7 @@ except:
 
 
 app = Flask(__name__)
-app.secret_key="raja-moli"
+app.secret_key=os.getenv("FLASK_SECRET_KEY","fallback_secret")
 @app.route("/")
 def home():
     if('user' in session):

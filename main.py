@@ -27,7 +27,10 @@ def home():
         return render_template('index.html',status='Login')
 @app.route("/contact")
 def contact():
-    return render_template('contact.html')
+    if('user' in session):
+        return render_template('index.html',status='Logout')
+    else:
+        return render_template('index.html',status='Login')
 @app.route("/login")
 def login():
     return render_template('login.html',status="Login")

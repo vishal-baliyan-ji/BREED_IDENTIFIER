@@ -13,8 +13,7 @@ batch_size = 32
 
 def predict(img_path):
     if not os.path.exists(model_path):
-        return("❌ Something wen wrong")
-        
+        return "Something went wrong"
 
     # Load full model
     model = load_model(model_path)
@@ -24,17 +23,18 @@ def predict(img_path):
         with open(class_names_file, "r") as f:
             class_names = f.read().splitlines()
     else:
-        return("❌ class_names.txt not found. Train at least once.")
-        
+        return "class_names.txt not found. Train at least once."
 
     if os.path.exists(img_path):
         img = image.load_img(img_path, target_size=img_size)
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0) / 255.0
 
-        prediction = model.predict(img_array)
+        prediction = model.predict(img_array)[0]  # prediction array for 1 image
         breed_index = np.argmax(prediction)
+        confidence = prediction[breed_index] * 100  # convert to %
 
-        return(class_names[breed_index])
+        return f"{class_names[breed_index]} ({confidence:.2f}% confident)"
     else:
-        return("❌ Image not found at given path!")
+        return " Image not found at given path!"
+

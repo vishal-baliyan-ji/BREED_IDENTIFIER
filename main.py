@@ -4,7 +4,8 @@ import os
 from Identifier import predict
 from werkzeug.utils import secure_filename
 import mysql.connector
-
+from dotenv import load_dotenv
+load_dotenv()
 DB_HOST = os.getenv("DATABASE_HOST")
 DB_PASS = os.getenv("DATABASE_PASSWORD")
 

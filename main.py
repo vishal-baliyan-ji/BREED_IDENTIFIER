@@ -29,9 +29,9 @@ def home():
 @app.route("/contact")
 def contact():
     if('user' in session):
-        return render_template('index.html',status='Logout')
+        return render_template('contact.html',status='Logout')
     else:
-        return render_template('index.html',status='Login')
+        return render_template('contact.html',status='Login')
 @app.route("/login")
 def login():
     return render_template('login.html',status="Login")
@@ -133,4 +133,4 @@ def search():
         return redirect(url_for('login'))
 
 if __name__ == '__main__':
-   app.run(host="0.0.0.0.",port=5000)
+   app.run(debug=True)

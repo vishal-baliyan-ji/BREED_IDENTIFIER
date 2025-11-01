@@ -15,7 +15,12 @@ try:
 except:
     pass
 
-
+def connectsql():
+    try:
+        mydb =mysql.connector.connect(host=DB_HOST,user="pashudhan_habitlucky",passwd=DB_PASS,database="pashudhan_habitlucky",port="61002")
+        cursor=mydb.cursor()
+    except:
+        pass
 
 
 app = Flask(__name__)
@@ -34,6 +39,10 @@ def contact():
         return render_template('contact.html',status='Login')
 @app.route("/login")
 def login():
+    if mydb.is_connected():
+        pass
+    else:
+        connectsql()
     return render_template('login.html',status="Login")
 
 @app.route("/logout")

@@ -19,8 +19,8 @@ def connectsql():
     try:
         mydb =mysql.connector.connect(host=DB_HOST,user="pashudhan_habitlucky",passwd=DB_PASS,database="pashudhan_habitlucky",port="61002")
         cursor=mydb.cursor()
-    except:
-        pass
+    except Error as e:
+        print(" MySQL Connection Failed:", e)
 
 
 app = Flask(__name__)
